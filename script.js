@@ -37,9 +37,8 @@ function displayWeather(data) {
     tempDivInfo.innerHTML = '';
 
     const currentWeather = data.current;
-    const hourlyForecast = data.hourly;
 
-    if (!currentWeather || !hourlyForecast) {
+    if (!currentWeather) {
         weatherInfoDiv.innerHTML = '<p>Weather data not available.</p>';
         return;
     }
@@ -48,8 +47,8 @@ function displayWeather(data) {
     const currentWindSpeed = currentWeather.wind_speed_10m;
 
     const temperatureHTML = `
-        <p>Current Temperature: ${currentTemperature}°C</p>
-        <p>Current Wind Speed: ${currentWindSpeed} m/s</p>
+        <p><i class="fas fa-temperature-high"></i> ${currentTemperature}°C</p>
+        <p><i class="fas fa-wind"></i> ${currentWindSpeed} m/s</p>
     `;
 
     tempDivInfo.innerHTML = temperatureHTML;
